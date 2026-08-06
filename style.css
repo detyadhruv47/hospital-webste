@@ -1,0 +1,79 @@
+/* Loader */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* Ensure it stays on top of the navbar */
+  transition: opacity 0.5s ease;
+}
+
+.loader-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-progress-container {
+  width: 200px;
+  height: 4px;
+  background: #333;
+  margin: 20px auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.loader-bar {
+  width: 0%;
+  height: 100%;
+  background: #fff;
+  transition: width 0.1s ease;
+}
+
+/* Pinned Sequence Section */
+.scroll-container {
+  position: relative;
+  width: 100%;
+  height: 500vh; /* Determines how long the animation lasts */
+}
+
+.canvas-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000; /* Dark background behind the canvas animation */
+}
+
+#sequence-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Animated Overlays */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  max-width: 400px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.overlay-text.visible {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
+}
